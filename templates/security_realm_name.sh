@@ -14,7 +14,7 @@ security_realm_rows_count=`echo $security_realm_rows | wc -l`
 if [ $security_realm_rows_count -eq 0 ]; then
     echo $need_not_login
 elif [ $security_realm_rows_count -eq 1 ]; then
-    security_realm_name=`echo $security_realm_rows | sed -n 's/.*<securityRealm class="\([^"]*\)"\/>.*/\1/p'`
+    security_realm_name=`echo $security_realm_rows | sed -n 's/.*<securityRealm class="\([^"]*\)">.*/\1/p'`
     echo $security_realm_name
 else
     echo "More then one Security Realm are found."
